@@ -5,31 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artemis</title>
-    <script src="js/tailwind.3.0.18.js"></script>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <!-- header -->
-    <header class="flex justify-between items-center px-10">
-        <div class="logo">
-            <img src="images/logo.svg" alt="logo">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="images/logo.svg" alt="logo" height="90" width="162">
+                    <span>Artemis</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/pages/overzicht.html">Onze dieren</a></li>
+                    <li><a href="/pages/nieuws.html">Nieuws</a></li>
+                    <li><a href="/pages/over-ons.html">Over ons</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/doneren.html" class="btn btn--primary">Doneren</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="flex gap-5">
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/pages/overzicht.html">Onze dieren</a></li>
-                <li><a href="/pages/nieuws.html">Nieuws</a></li>
-                <li><a href="/pages/over-ons.html">Over ons</a></li>
-                <li><a href="/pages/contact.html">Contact</a></li>
-                <button class="btn btn-primary">Doneren</button>
-            </ul>
-        </nav>
     </header>
 
+    <!-- main -->
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda temporibus quibusdam atque ducimus numquam accusantium veritatis sint in quas.
+                </p>
+                <div class="btns">
+                    <a href="/doneren.html" class="btn btn--primary">Doneren</a>
+                    <a href="/overzicht.html" class="btn btn--outline">Bekijk onze dieren</a>
+                </div>
+                <div class="scroll-cta"><img src="/images/arrow-down.svg" alt="Scroll down" height="45" width="37"></div>
             </div>
         </section>
     </main>
