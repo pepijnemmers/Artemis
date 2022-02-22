@@ -1,0 +1,26 @@
+/* variables */
+:root {
+    --white: #fff;
+    --background: #f9f9f9;
+    --text: #292929;
+    --border: #cccccc;
+
+    --primary-color: #5457a6;
+    --sec-color: #eebb55;
+
+    --primary-btn-bg: #5457a6;
+    --primary-btn-bg-h: #47378f;
+    --primary-btn-color: #f2f2f2;
+    --sec-btn-bg: #eebb55;
+    --sec-btn-bg-h: #dda73b;
+    --sec-btn-color: #292929;
+    --active-link-bg: hsl(0, 0%, 93%);
+
+    --box-shadow-10: rgba(0, 0, 0, 0.1);
+    --box-shadow-20: rgba(0, 0, 0, 0.2);
+    --box-shadow-30: rgba(0, 0, 0, 0.3);
+}
+
+$transition: 200ms ease;
+$btn-padding: .5em 2em;
+$btn-border-radius: .2em;

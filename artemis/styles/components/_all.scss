@@ -1,0 +1,11 @@
+// import components
+@import "_buttons.scss";
+@import "_slider.scss";
+
+// other components
+.container {
+    position: relative;
+    width: 1280px;
+    max-width: 95%;
+    margin-inline: auto;
+}

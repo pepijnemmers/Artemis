@@ -1,4 +1,113 @@
-/* include fonts */
+/* variables */
+:root {
+  --white: #fff;
+  --background: #f9f9f9;
+  --text: #292929;
+  --border: #cccccc;
+  --primary-color: #5457a6;
+  --sec-color: #eebb55;
+  --primary-btn-bg: #5457a6;
+  --primary-btn-bg-h: #47378f;
+  --primary-btn-color: #f2f2f2;
+  --sec-btn-bg: #eebb55;
+  --sec-btn-bg-h: #dda73b;
+  --sec-btn-color: #292929;
+  --active-link-bg: hsl(0, 0%, 93%);
+  --box-shadow-10: rgba(0, 0, 0, 0.1);
+  --box-shadow-20: rgba(0, 0, 0, 0.2);
+  --box-shadow-30: rgba(0, 0, 0, 0.3);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 9rem;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* including fonts */
 @font-face {
   font-family: "Lato";
   src: url(/fonts/Lato/Lato-Thin.ttf);
@@ -59,59 +168,6 @@
   font-weight: 900;
   font-style: italic;
 }
-/* root variables */
-:root {
-  --white: #fff;
-  --background: #f9f9f9;
-  --text: #292929;
-  --border: #cccccc;
-  --primary-color: #5457a6;
-  --sec-color: #eebb55;
-  --primary-btn-bg: #5457a6;
-  --primary-btn-bg-h: #47378f;
-  --primary-btn-color: #f2f2f2;
-  --sec-btn-bg: #eebb55;
-  --sec-btn-bg-h: #dda73b;
-  --sec-btn-color: #292929;
-  --active-link-bg: hsl(0, 0%, 93%);
-  --box-shadow-10: rgba(0, 0, 0, 0.1);
-  --box-shadow-20: rgba(0, 0, 0, 0.2);
-  --box-shadow-30: rgba(0, 0, 0, 0.3);
-}
-
-/* reset */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-padding-top: 9rem;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.4;
-  background-color: var(--background);
-  color: var(--text);
-  min-height: 150vh;
-}
-
-/* basic components */
-.container {
-  position: relative;
-  width: 1280px;
-  max-width: 95%;
-  margin-inline: auto;
-}
-
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -171,6 +227,13 @@ body {
   background-color: lightgray;
   border-color: lightgray;
   color: var(--primary-btn-color);
+}
+
+.container {
+  position: relative;
+  width: 1280px;
+  max-width: 95%;
+  margin-inline: auto;
 }
 
 /* header */
@@ -258,7 +321,6 @@ header nav ul li a.active:not(.btn) {
   height: 7.5rem;
 }
 
-/* --- MAIN --- */
 /* hero section */
 .hero {
   padding-top: 1.5rem;
@@ -336,4 +398,7 @@ header nav ul li a.active:not(.btn) {
     -webkit-transform: translateY(5px);
             transform: translateY(5px);
   }
+}
+body {
+  background-color: red;
 }

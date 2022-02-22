@@ -1,0 +1,70 @@
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    padding: $btn-padding;
+    border-radius: $btn-border-radius;
+    transition: 
+        background-color $transition, 
+        color $transition, 
+        border $transition,
+        transform $transition;
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &--primary {
+        background-color: var(--primary-btn-bg);
+        border: 2px solid var(--primary-btn-bg);
+        color: var(--primary-btn-color);
+
+        &:hover, &:focus {
+            background-color: var(--primary-btn-bg-h);
+            border: 2px solid var(--primary-btn-bg-h);
+        }
+    }
+
+    &--sec {
+        background-color: var(--sec-btn-bg);
+        border: 2px solid var(--sec-btn-bg);
+        color: var(--sec-btn-color);
+
+        &:hover, &:focus {
+            background-color: var(--sec-btn-bg-h);
+            border: 2px solid var(--sec-btn-bg-h);
+        }
+    }
+
+    &--outline {
+        border: 2px solid var(--primary-btn-bg);
+        color: var(--primary-btn-bg);
+
+        &:hover, &:focus {
+            background-color: var(--primary-btn-bg);
+            color: var(--primary-btn-color);
+        }
+    }
+
+    &--tertiary {
+        color: var(--primary-btn-bg);
+        text-decoration: underline;
+        padding: 0;
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+        &[disabled], &.btn--disabled {
+            background-color: transparent !important;
+            color: lightgray !important;
+            text-decoration: underline !important;
+        }
+    }
+
+    &[disabled], &--disabled {
+        cursor: not-allowed;
+        background-color: lightgray;
+        border-color: lightgray;
+        color: var(--primary-btn-color);
+    }
+}

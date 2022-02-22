@@ -1,0 +1,47 @@
+/* hero section */
+.hero {
+    padding-top: 1.5rem;
+    background-color: #e6e6e6;
+
+    .container {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+    h1 {
+        font-size: 4.2rem;
+        max-width: 60rem;
+        line-height: 1;
+        margin-bottom: .5em;
+    }
+    p {
+        max-width: 80rem;
+    }
+    .btns {
+        display: flex;
+        gap: 1em;
+        margin-top: 2em;
+    }
+    .scroll-cta {
+        position: absolute;
+        bottom: -2rem;
+        right: 0;
+        filter: drop-shadow(0 0 3px var(--background));
+        animation: bounce 2s cubic-bezier(0.39, 0.52, 0.38, 1.01) forwards infinite;
+    }
+}
+@keyframes bounce {
+    50%, 100% {
+        transform: none;
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(5px);
+    }
+}
