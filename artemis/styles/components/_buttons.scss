@@ -37,12 +37,27 @@
     }
 
     &--outline {
-        border: 2px solid var(--primary-btn-bg);
-        color: var(--primary-btn-bg);
-
-        &:hover, &:focus {
+        border: 2px solid var(--primary-btn-bg); //rgb(238 187 85 / 15%)
+        color: var(--primary-btn-bg);    
+        
+        &:hover {
             background-color: var(--primary-btn-bg);
             color: var(--primary-btn-color);
+            text-shadow: none;
+        }
+        &:focus {
+            text-decoration: underline;
+            text-shadow: none;
+        }
+    }
+    &--outline-y {
+        border: 2px solid var(--sec-btn-bg);
+        color: var(--sec-btn-bg);
+        font-weight: 700;
+        text-shadow: 0 0 8px black;
+        
+        &:hover, &:focus {
+            text-decoration: underline;
         }
     }
 

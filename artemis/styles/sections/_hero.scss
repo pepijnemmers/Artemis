@@ -1,8 +1,18 @@
 /* hero section */
 .hero {
+    position: relative;
     padding-top: 1.5rem;
     background-color: #e6e6e6;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
 
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, .3);
+    }
     .container {
         min-height: 80vh;
         display: flex;
@@ -12,11 +22,15 @@
         text-align: center;
         padding-bottom: 5%;
     }
+    h1, p {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+    }
     h1 {
         font-size: 4.2rem;
         max-width: 60rem;
         line-height: 1;
         margin-bottom: .5em;
+        letter-spacing: 2px;
     }
     p {
         max-width: 80rem;
@@ -25,6 +39,16 @@
         display: flex;
         gap: 1em;
         margin-top: 2em;
+
+        .btn--outline {
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, .6);
+
+            &:hover {
+                color: var(--primary-btn-bg);
+                background-color: rgba(255, 255, 255, 0.75);
+            }
+        }
     }
     .scroll-cta {
         position: absolute;
