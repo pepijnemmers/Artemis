@@ -1,10 +1,10 @@
 .hidden {
     display: none;
 }
-.flex {
+.flex, .row {
     display: flex;
 }
-.items-center {
+.align-center {
     align-items: center;
 }
 .justify-center {

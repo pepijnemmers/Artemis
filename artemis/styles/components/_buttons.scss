@@ -61,13 +61,16 @@
         }
     }
 
-    &--tertiary {
-        color: var(--primary-btn-bg);
+    &--link {
+        color: var(--text);
         text-decoration: underline;
         padding: 0;
 
         &:hover, &:focus {
             text-decoration: none;
+        }
+        &:focus {
+            outline: 2px solid #292929;
         }
         &[disabled], &.btn--disabled {
             background-color: transparent !important;

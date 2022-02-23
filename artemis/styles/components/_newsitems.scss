@@ -1,0 +1,98 @@
+$news-gap: 2.5em;
+
+.newsitems .row {
+    justify-content: space-between;
+    gap: $news-gap;
+    margin: $news-gap - ($news-gap / 2) 0;
+
+    &:not(:first-child) {
+        margin: $news-gap 0;
+    }
+    .news-item {
+        flex: 1 1 33%; // flex-grow | flex-shrink | flex-basis
+        background-color: var(--background);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        transition: box-shadow $transition;
+
+        &:hover, &:focus {
+            box-shadow: 0 3px 5px 0 var(--box-shadow-20);
+        }
+        a {
+            &:hover .img img, &:focus .img img {
+                transform: scale(1.03);
+            }
+        }
+        .img {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 16em;
+            max-height: 16em;
+            overflow: hidden;
+            background: #f5f5f5 url(/images/img-icon.svg) no-repeat;
+            background-size: 30%;
+            background-position: center 45%;
+
+            &::before {
+                content: "Kan afbeelding niet laden...";
+                position: absolute;
+                z-index: 0;
+                top: 80%;
+                transform: translateY(-50%);
+                width: 100%;
+                text-align: center;
+                color: #777;
+                font-size: 1.5rem;
+                font-style: italic;
+            }
+            img {
+                position: relative;
+                z-index: 10;
+                transition: transform $transition;
+            }
+        }
+        .content {
+            position: relative;
+            padding: .5em 1em 1em 1em;
+
+            h3 {
+                font-size: 2.3rem;
+                margin-bottom: .5em;
+            }
+            > div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 1.5em;
+
+                .link {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: .8em;
+                    font-weight: 700;
+                    text-decoration: none;
+                    color: var(--title);
+                    transition: gap $transition;
+                        
+                    &::after {
+                        content: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2223.478%22%20height%3D%2216.151%22%20viewBox%3D%220%200%2023.478%2016.151%22%3E%0A%20%20%3Cpath%20id%3D%22arrow-down-outline%22%20d%3D%22M0%2C14.569l6.661%2C6.909%2C6.661-6.909M6.661%2C21.33V0%22%20transform%3D%22translate%281%2014.737%29%20rotate%28-90%29%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%2F%3E%0A%3C%2Fsvg%3E%0A);
+                        height: 1.2em;
+                    }
+                    &:hover, &:focus  {
+                        gap: 1.2em;
+                    }
+                }
+                .date {
+                    border: 1px solid var(--border);
+                    color: gray;
+                    padding: 0.2em 0.5em;
+                    font-size: .9em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
