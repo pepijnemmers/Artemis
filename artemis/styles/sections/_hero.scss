@@ -7,11 +7,14 @@
     background-size: cover;
     background-position: center;
 
+   
+
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, 0.3);
+        background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.4) 40%,  transparent 60%);
     }
     .container {
         min-height: 80vh;
@@ -23,13 +26,13 @@
         padding-bottom: 5%;
     }
     h1, p {
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
     }
     h1 {
-        font-size: 4.2rem;
-        max-width: 60rem;
-        line-height: 1;
-        margin-bottom: .5em;
+        font-size: 4rem;
+        max-width: 65rem;
+        line-height: 1.1;
+        margin-bottom: 0.5em;
         letter-spacing: 2px;
     }
     p {
@@ -54,7 +57,6 @@
         position: absolute;
         bottom: -2rem;
         right: 0;
-        filter: drop-shadow(0 0 3px var(--background));
         animation: bounce 2s cubic-bezier(0.39, 0.52, 0.38, 1.01) forwards infinite;
     }
 }
