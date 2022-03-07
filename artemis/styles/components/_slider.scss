@@ -9,20 +9,23 @@ $slider-gap: 3em;
         width: 120vw;
         margin: 0 -10vw;
 
-        // slider track and slides
         .slick-track {
             display: flex;
             align-items: center;
+            cursor: grab;
+
+            &:active {
+                cursor: grabbing;
+            }
 
             .slick-slide img:not(.slick-center img) {
                 padding: 0 $slider-gap;    
-                filter: grayscale(.5) contrast(80%);
+                filter: grayscale(.7) contrast(80%);
                 opacity: .7;
                 transition: all 400ms ease;
             }
         }
 
-        // slider arrows
         .slick-arrow {
             z-index: 999;
             background-color: var(--primary-btn-bg);
@@ -54,7 +57,6 @@ $slider-gap: 3em;
             }
         }
 
-        // slider dots
         .slick-dots {
             bottom: -2em;
 

@@ -370,11 +370,17 @@ a:not(.link, .btn, .btn--link) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.slider .slick-center-lg .slick-track:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 .slider .slick-center-lg .slick-track .slick-slide img:not(.slick-center img) {
   padding: 0 3em;
-  -webkit-filter: grayscale(0.5) contrast(80%);
-          filter: grayscale(0.5) contrast(80%);
+  -webkit-filter: grayscale(0.7) contrast(80%);
+          filter: grayscale(0.7) contrast(80%);
   opacity: 0.7;
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
@@ -496,6 +502,11 @@ a:not(.link, .btn, .btn--link) {
 .newsitems .row .news-item .content h3 {
   font-size: 2.3rem;
   margin-bottom: 0.5em;
+}
+.newsitems .row .news-item .content p {
+  min-height: 8em;
+  max-height: 8em;
+  overflow: hidden;
 }
 .newsitems .row .news-item .content > div {
   display: -webkit-box;
