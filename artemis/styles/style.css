@@ -1,13 +1,17 @@
 /* variables */
 :root {
   --white: #fff;
+  --black: #000;
   --background: #f9f9f9;
   --title: #000;
   --text: #292929;
-  --border: #cccccc;
   --primary-color: #5457a6;
   --sec-color: #eebb55;
   --outline: #000000;
+  --border: #cccccc;
+  --slider-dots: #ccc;
+  --slider-dots-active: #292929;
+  --slider-dots-hover: #999;
   --primary-btn-bg: #5457a6;
   --primary-btn-bg-h: #47378f;
   --primary-btn-color: #f2f2f2;
@@ -351,6 +355,69 @@ a:not(.link, .btn, .btn--link) {
   color: var(--primary-btn-color);
 }
 
+.slider {
+  margin-top: 12vh !important;
+  margin-bottom: 12vh !important;
+}
+.slider .slick-center-lg {
+  width: 120vw;
+  margin: 0 -10vw;
+}
+.slider .slick-center-lg .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.slider .slick-center-lg .slick-track .slick-slide img:not(.slick-center img) {
+  padding: 0 3em;
+  -webkit-filter: grayscale(0.5) contrast(80%);
+          filter: grayscale(0.5) contrast(80%);
+  opacity: 0.7;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.slider .slick-center-lg .slick-arrow {
+  z-index: 999;
+  background-color: var(--primary-btn-bg);
+  background-repeat: no-repeat;
+  background-size: 28%;
+  width: 4rem;
+  height: 4rem;
+  outline: 2px solid var(--background);
+  border-radius: 50%;
+}
+.slider .slick-center-lg .slick-arrow::before {
+  content: none;
+}
+.slider .slick-center-lg .slick-arrow:hover {
+  background-color: var(--primary-btn-bg-h);
+}
+.slider .slick-center-lg .slick-arrow:focus-visible {
+  outline-offset: 0.3rem;
+}
+.slider .slick-center-lg .slick-arrow.slick-prev {
+  left: 33rem;
+  background-image: url(/images/slider-arrow-left.svg);
+  background-position: 45% center;
+}
+.slider .slick-center-lg .slick-arrow.slick-next {
+  right: 33rem;
+  background-image: url(/images/slider-arrow-right.svg);
+  background-position: 54.5% center;
+}
+.slider .slick-center-lg .slick-dots {
+  bottom: -2em;
+}
+.slider .slick-center-lg .slick-dots li {
+  margin: 0;
+}
+.slider .slick-center-lg .slick-dots button::before {
+  font-size: 3rem;
+}
+
 .newsitems .row {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -390,12 +457,16 @@ a:not(.link, .btn, .btn--link) {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  min-height: 16em;
   max-height: 16em;
   overflow: hidden;
   background: #f5f5f5 url(/images/img-icon.svg) no-repeat;
   background-size: 30%;
   background-position: center 45%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.newsitems .row .news-item .img:empty {
+  min-height: 16em;
 }
 .newsitems .row .news-item .img::before {
   content: "Kan afbeelding niet laden...";
@@ -486,8 +557,8 @@ header {
   -webkit-box-shadow: 5px 0 8px var(--box-shadow-10);
           box-shadow: 5px 0 8px var(--box-shadow-10);
   font-size: 1.6rem;
-  -webkit-transition: margin-bottom 200ms ease;
-  transition: margin-bottom 200ms ease;
+  -webkit-transition: margin-bottom 200ms ease, margin-top 200ms ease;
+  transition: margin-bottom 200ms ease, margin-top 200ms ease;
 }
 header .container {
   display: -webkit-box;
@@ -520,6 +591,7 @@ header .logo a img {
   width: auto;
   height: 9rem;
   margin-bottom: -1.5rem;
+  margin-top: -2px;
   -webkit-box-shadow: 5px 0 5px 0 var(--box-shadow-10);
           box-shadow: 5px 0 5px 0 var(--box-shadow-10);
   -webkit-transition: margin-bottom 200ms ease, height 200ms ease;
@@ -669,4 +741,8 @@ section {
 }
 section:first-of-type {
   margin-top: 3rem;
+}
+
+.homepage section:first-of-type {
+  margin-top: 0 !important;
 }

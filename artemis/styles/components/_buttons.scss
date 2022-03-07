@@ -14,6 +14,7 @@
         transform: scale(0.95);
     }
 
+    // button states
     &--primary {
         background-color: var(--primary-btn-bg);
         border: 2px solid var(--primary-btn-bg);
@@ -79,6 +80,7 @@
         }
     }
 
+    // disabled buttons
     &[disabled], &--disabled {
         cursor: not-allowed;
         background-color: lightgray;

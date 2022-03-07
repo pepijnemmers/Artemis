@@ -23,21 +23,23 @@
     <meta name="msapplication-TileColor" content="#f9f9f9">
     <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#f9f9f9">
-
+    
     <!-- scripts -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/slick/slick.min.js"></script>
+    <script src="/vendor/jquery-3.6.0.min.js"></script>
+    <script src="/vendor/slick/slick.min.js"></script>
     <script src="/js/script.js" defer></script>
     <!-- stylesheets -->
+    <link rel="stylesheet" href="/vendor/slick/slick.css">
+    <link rel="stylesheet" href="/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
-<body>
+<body class="homepage">
     <!-- header -->
     <header>
         <div class="container">
             <div class="logo">
                 <a href="/">
-                    <img src="images/logo.svg" alt="logo" height="90" width="162">
+                    <img src="/images/logo.svg" alt="logo" height="90" width="162">
                     <span>Artemis</span>
                 </a>
             </div>
@@ -71,25 +73,14 @@
         </section>
 
         <section class="slider">
-            <p style="text-align: center;">
-                <br>
-                <br>
-                <br>
-                <br>
-                HERE COMES THE SLIDER
-                <br>
-                <br>
-                <br>
-                <br>
-            </p>
             <h2 class="hidden">Afbeeldingen</h2>
-            <div class="slick-slider-lg" style="display: none;">
-                <div class="slide"><img src="images/slider1.webp" alt=""></div>
-                <div class="slide"><img src="images/slider2.webp" alt=""></div>
-                <div class="slide"><img src="images/slider3.webp" alt=""></div>
-                <div class="slide"><img src="images/slider4.webp" alt=""></div>
-                <div class="slide"><img src="images/slider5.webp" alt=""></div>
-                <div class="slide"><img src="images/slider6.webp" alt=""></div>
+            <div class="slick-center-lg">
+                <div class="slide"><img src="/images/slider1.webp" alt=""></div>
+                <div class="slide"><img src="/images/slider2.webp" alt=""></div>
+                <div class="slide"><img src="/images/slider3.webp" alt=""></div>
+                <div class="slide"><img src="/images/slider4.webp" alt=""></div>
+                <div class="slide"><img src="/images/slider5.webp" alt=""></div>
+                <div class="slide"><img src="/images/slider6.webp" alt=""></div>
             </div>
         </section>
 
@@ -103,7 +94,7 @@
                     <div class="flex row">
                         <div class="news-item">
                             <a href="#">
-                                <div class="img"><img src="images/slider1.webp" alt=""></div>
+                                <div class="img"><img src="/images/slider1.webp" alt=""></div>
                                 <div class="content">
                                     <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam alias ea ipsa sequi suscipit dolorem reiciendis odit eveniet id perspiciatis quae, hic fugit et unde!</p>
@@ -116,7 +107,7 @@
                         </div>
                         <div class="news-item">
                             <a href="#">
-                                <div class="img"><img src="images/slider2.webp" alt=""></div>
+                                <div class="img"><img src="/images/slider2.webp" alt=""></div>
                                 <div class="content">
                                     <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam alias ea ipsa sequi suscipit dolorem reiciendis odit eveniet id perspiciatis quae, hic fugit et unde!</p>
@@ -129,7 +120,7 @@
                         </div>
                         <div class="news-item">
                                 <a href="#">
-                                <div class="img"><img src="images/slider6.webp" alt=""></div>
+                                <div class="img"><img src="/images/slider6.webp" alt=""></div>
                                 <div class="content">
                                     <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam alias ea ipsa sequi suscipit dolorem reiciendis odit eveniet id perspiciatis quae, hic fugit et unde!</p>
