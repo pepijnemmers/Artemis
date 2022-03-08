@@ -1,10 +1,11 @@
 // hero section
 @import "_hero.scss";
+@import "_contact.scss";
 
 // Global section css
 section {
     position: relative;
-    margin: max(8rem, 5vh) 0;
+    margin: max(10rem, 5vh) 0;
     &:first-of-type {
         margin-top: 3rem;
     }

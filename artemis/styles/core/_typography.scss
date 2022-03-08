@@ -91,10 +91,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     font-weight: 800;
     line-height: 1.1;
-    margin: .2em 0;
+    margin: .5em 0;
 }
 h2 {
     font-size: 3.2rem;
@@ -129,4 +129,8 @@ h6 + p {
 a:not(.link, .btn, .btn--link) {
     color: var(--title);
     text-decoration: none;
+}
+
+label {
+    color: var(--placeholder);
 }

@@ -8,6 +8,7 @@
     --background: #f9f9f9;
     --title: #000;
     --text: #292929;
+    --placeholder: #777;
 
     // primary (accent) colors
     --primary-color: #5457a6;
@@ -35,9 +36,13 @@
     --box-shadow-10: rgba(0, 0, 0, 0.1);
     --box-shadow-20: rgba(0, 0, 0, 0.2);
     --box-shadow-30: rgba(0, 0, 0, 0.3);
+
+    // accent-color instellen
+    accent-color: var(--primary-color, #5457a6);
 }
 
 // scss variables
 $transition: 200ms ease;
 $btn-padding: .5em 2em;
 $btn-border-radius: .2em;
+$border-radius: .2em;
