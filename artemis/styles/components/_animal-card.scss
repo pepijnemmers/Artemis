@@ -1,0 +1,105 @@
+.animal-card {
+    position: relative;
+    background-color: #fff;
+    color: var(--lighttext);
+    background-image: url(/images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: $border-radius;
+
+    a {
+        color: inherit;
+
+        > * {
+            position: relative;
+            z-index: 99;
+        }
+    }
+    .img {
+        z-index: 0;
+        width: 28rem;
+        height: 28rem;
+        overflow: hidden;
+        border-radius: $border-radius;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .ras {
+        position: absolute;
+        z-index: 100;
+        top: 1em;
+        left: -.5em;
+        padding: .2em .8em;
+        background-color: var(--primary-color);
+        color: var(--primary-btn-color);
+
+        opacity: 0;
+        pointer-events: none;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: opacity $transition, clip-path 300ms ease 250ms;
+    }
+    .desc {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 0 .8em;
+        font-size: 1.4rem;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity $transition;
+        > * {
+            position: relative;
+            transition: top $transition;
+        }
+        h2 {
+            font-size: 2.8rem;
+            line-height: 1;
+            color: var(--white);
+            top: 3em;
+        }
+        p {
+            top: 2em;
+        }
+        .btn {
+            margin: .8em 0 1.5em 0;
+            padding: .2em 1em;
+            letter-spacing: 1px;
+        }
+    }
+    a::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, 
+                        rgba(0,0,0,.8) 0%, 
+                        rgba(0,0,0,0.5) 60%, 
+                        rgba(0,0,0,0) 80%
+                    );
+        border-radius: $border-radius;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity $transition;
+    }
+
+    // active card
+    a:hover, a:focus-visible {
+        .desc h2, .desc p {
+            top: 0;
+        }
+        .ras {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        &::after, .ras, .desc, .desc .btn {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}

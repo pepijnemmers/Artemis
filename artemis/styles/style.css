@@ -5,6 +5,7 @@
   --background: #f9f9f9;
   --title: #000;
   --text: #292929;
+  --lighttext: #f2f2f2;
   --placeholder: #777;
   --primary-color: #5457a6;
   --sec-color: #eebb55;
@@ -295,6 +296,10 @@ label {
           flex: 1 1 33%;
 }
 
+.grid {
+  display: grid;
+}
+
 button {
   cursor: pointer;
 }
@@ -572,6 +577,107 @@ button {
   text-transform: uppercase;
 }
 
+.animal-card {
+  position: relative;
+  background-color: #fff;
+  color: var(--lighttext);
+  background-image: url(/images/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.2em;
+}
+.animal-card a {
+  color: inherit;
+}
+.animal-card a > * {
+  position: relative;
+  z-index: 99;
+}
+.animal-card .img {
+  z-index: 0;
+  width: 28rem;
+  height: 28rem;
+  overflow: hidden;
+  border-radius: 0.2em;
+}
+.animal-card .img img {
+  width: 100%;
+  height: auto;
+}
+.animal-card .ras {
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  left: -0.5em;
+  padding: 0.2em 0.8em;
+  background-color: var(--primary-color);
+  color: var(--primary-btn-color);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  -webkit-transition: opacity 200ms ease, -webkit-clip-path 300ms ease 250ms;
+  transition: opacity 200ms ease, -webkit-clip-path 300ms ease 250ms;
+  transition: opacity 200ms ease, clip-path 300ms ease 250ms;
+  transition: opacity 200ms ease, clip-path 300ms ease 250ms, -webkit-clip-path 300ms ease 250ms;
+}
+.animal-card .desc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 0.8em;
+  font-size: 1.4rem;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.animal-card .desc > * {
+  position: relative;
+  -webkit-transition: top 200ms ease;
+  transition: top 200ms ease;
+}
+.animal-card .desc h2 {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--white);
+  top: 3em;
+}
+.animal-card .desc p {
+  top: 2em;
+}
+.animal-card .desc .btn {
+  margin: 0.8em 0 1.5em 0;
+  padding: 0.2em 1em;
+  letter-spacing: 1px;
+}
+.animal-card a::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(60%, rgba(0, 0, 0, 0.5)), color-stop(80%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 80%);
+  border-radius: 0.2em;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.animal-card a:hover .desc h2, .animal-card a:hover .desc p, .animal-card a:focus-visible .desc h2, .animal-card a:focus-visible .desc p {
+  top: 0;
+}
+.animal-card a:hover .ras, .animal-card a:focus-visible .ras {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.animal-card a:hover::after, .animal-card a:hover .ras, .animal-card a:hover .desc, .animal-card a:hover .desc .btn, .animal-card a:focus-visible::after, .animal-card a:focus-visible .ras, .animal-card a:focus-visible .desc, .animal-card a:focus-visible .desc .btn {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .container {
   position: relative;
   width: 1280px;
@@ -659,7 +765,7 @@ header nav ul li a:not(.btn):hover, header nav ul li a:not(.btn):focus {
   background-color: var(--active-link-bg);
   outline: none;
 }
-header nav ul li a.active:not(.btn) {
+header nav ul li a.active {
   font-weight: 700;
 }
 
@@ -713,7 +819,7 @@ footer .container:first-child .about {
       -ms-flex: 1 1 35%;
           flex: 1 1 35%;
   font-size: 0.9em;
-  margin-right: 4em;
+  margin-right: 2em;
 }
 footer .container:first-child .about .logo img {
   height: 5em;
@@ -722,15 +828,16 @@ footer .container:first-child .about .logo img {
 }
 footer .container:last-child {
   font-size: 1.4rem;
-  font-style: italic;
+  color: #999;
   margin-top: 2.5em;
 }
 footer .container:last-child a {
-  text-decoration: underline;
-  margin: 0 0.5em;
+  text-decoration: none;
+  margin: 0 0.8em;
+  color: inherit;
 }
 footer .container:last-child a:hover, footer .container:last-child a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* hero section */
@@ -869,7 +976,7 @@ form input, form textarea {
   position: relative;
   border: 1px solid var(--border);
   border-radius: 0.2em;
-  background-color: transparent;
+  background-color: var(--background);
   width: 100%;
   height: 2.5em;
   padding: 0.45em 0.85em;
@@ -922,6 +1029,13 @@ form .newsletter label {
 }
 form button[type=submit] {
   padding: 0.5em 3em;
+}
+
+.animals .grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 4em;
+  margin-top: 2em;
 }
 
 section {

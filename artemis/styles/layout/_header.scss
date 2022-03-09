@@ -62,7 +62,7 @@ header {
                 outline: none;
             }
         }
-        li a.active:not(.btn) {
+        li a.active {
             font-weight: 700;
         }
     }
