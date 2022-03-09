@@ -585,6 +585,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 0.2em;
+  border: 1px solid var(--border);
 }
 .animal-card a {
   color: inherit;
