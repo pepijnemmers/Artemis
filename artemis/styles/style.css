@@ -96,6 +96,11 @@ select {
   font: inherit;
 }
 
+/* setting abbr */
+abbr {
+  cursor: help;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -1037,6 +1042,24 @@ form button[type=submit] {
   grid-template-rows: auto;
   gap: 4em;
   margin-top: 2em;
+}
+
+.about-us .flex {
+  gap: 3em;
+}
+.about-us .flex-col-50:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+}
+.about-us p {
+  margin-bottom: 2em;
+}
+.about-us img {
+  position: sticky;
+  top: 7.2em;
+  margin-left: auto;
+  max-height: 80vh;
 }
 
 section {
