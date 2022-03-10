@@ -1,6 +1,6 @@
 .animals {
     .grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
         gap: 4em;
         margin-top: 2em;
