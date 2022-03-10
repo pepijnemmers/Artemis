@@ -33,6 +33,7 @@ html:focus-within {
 html {
   font-size: 62.5%;
   scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
@@ -43,6 +44,7 @@ body {
   color: var(--text);
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-padding-top: 80px;
 }
 
 /* A elements that don't have a class get default styles */

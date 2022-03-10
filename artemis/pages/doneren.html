@@ -27,6 +27,7 @@
     <!-- scripts -->
     <script src="/vendor/jquery-3.6.0.min.js"></script>
     <script src="/js/script.js" defer></script>
+    <script src="/js/donation.js" defer></script>
     <!-- stylesheets -->
     <link rel="stylesheet" href="/styles/style.css">
 </head>
@@ -54,12 +55,134 @@
     </header>
 
     <!-- main -->
+
+    <!-- 
+        TODO
+        - rechtse deel maken met html cs
+        - javascript deel maken voor formulier 
+            - niet vergeten bedrag in send buttons toe te voegen
+            slide 1. { 
+                - Buttons selecteren en active class toevoegen
+                - Selected price in button tonen
+            }
+        - array maken met donateursnamen en die loopen in "bedankt voor je donatie + naam"
+        - als gedoneerd is, javascript variable/localstorage updaten en invullen in browser
+            1. Totalprice
+            2. TotalDonaters
+            3. Progresbar
+            4. Array met namen
+            5. Laatste donateurs
+    -->
     <main>
-        
-        <section class="container">
-            doneren page
+        <section class="donate">
+            <div class="container">
+                <h1>Doneren</h1>
+                <div class="flex align-center donate-box">
+                    <div class="donate-left">
+                        <div class="banner"></div>
+                        <div class="donate-info">
+                            <div class="top">
+                                <div class="flex justify-between align-center">
+                                    <div>
+                                        <div class="totalprice">€321,85</div>
+                                        <div class="goal">van de €1980,- als doel</div>
+                                    </div>
+                                    <div class="totaldonates"><a href="#donaters" class="btn--link">15 Donateurs</a></div>
+                                </div>
+                                <div class="progressbar">
+                                    <div class="bar" data-price="321.85"></div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                <h2>Title lorem ipsum</h2>
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi non recusandae aut a architecto, dolor nostrum quidem minima necessitatibus ipsa, quo optio quisquam ducimus nulla harum adipisci aspernatur! Nam!
+                                </p>
+                            </div>
+                            <div class="bottom flex justify-between">
+                                <button class="btn btn--primary share"><span>Delen</span><img src="/images/share.svg" alt="icon"></button>
+                                <div class="thanks flex align-center">
+                                    <img src="/images/heart.svg" alt="hartje">
+                                    <p>
+                                        Bedankt voor je donatie <span id="thanks-donater">donateursnaam</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="donate-right">
+                        <div class="logo"><img src="/images/logo-circle.svg" alt="Artemis"></div>
+                        <!-- first slide -->
+                        <div class="first-slide">
+                            <h3>Doneer eenmalig <br>en help een dier in nood</h3>
+                            <div class="flex">
+                                <button>€10,00</button>
+                                <button>€15,00</button>
+                                <button class="active">€25,00</button>
+                                <button>€50,00</button>
+                                <button>€100,00</button>
+                                <button>€200,00</button>
+                                <div class="input">
+                                    <input type="number" name="bedrag" id="bedrag" value="0.00" title="LET OP! Gebruik een punt (.)">
+                                    <label for="bedrag">Anders: <span>€</span></label>
+                                </div>
+                            </div>
+                            <button class="btn btn--primary">Doneer €<span class="bedrag"></span></button>
+                            <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
+                        </div>
+                        <!-- second slide -->
+                        <div class="second-slide hidden">
+                            <button class="back-btn flex align-center">&lt;&nbsp; Vorige</button>
+                            <h3>Doneer eenmalig <br>en help een dier in nood</h3>
+
+                            <form action="#" method="post" autocomplete="off">
+                                <div>
+                                    <input type="text" name="name" id="name" required>
+                                    <label for="name">Naam*</label>
+                                </div>
+                                <div>
+                                    <input type="text" name="email" id="email" required>
+                                    <label for="email">Emailadres*</label>
+                                </div>
+                            </form>
+                            
+                            <button class="btn btn--primary">Verstuur donatie van €<span class="bedrag"></span></button>
+                            <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
+                        </div>
+                        <!-- third slide -->
+                        <div class="third-slide hidden">
+                            <h3>Bedankt voor uw gift! <br><span>Het wordt enorm gewaardeerd.</span></h3>
+                            <img src="/images/thanks-donate.jpg" title="Bedankt voor het doneren" alt="Bedankt voor het doneren">
+
+                            <button class="btn btn--primary">Sluiten</button>
+                            <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section class="latest-donates" id="donaters">
+            <div class="container">
+                <div class="flex">
+                    <div class="flex-col-50">
+                        <h2>Laatste donateurs</h2>
+                        <p>Bedankt voor jullie hulp! Het wordt enorm gewaardeerd.</p>
+                        
+                        <ul>
+                            <li><span>Pedro Donaldson</span>    met een donatie van     <span>€30,00</span></li>
+                            <li><span>Rianne</span>             met een donatie van     <span>€5,00</span></li>
+                            <li><span>Frank Utrecht</span>      met een donatie van     <span>€125,10</span></li>
+                            <li><span>Ally</span>               met een donatie van     <span>€25,00</span></li>
+                            <li><span>Roderick Govert</span>    met een donatie van     <span>€10,00</s></li>
+                        </ul>
+                    </div>
+                    <div class="flex-col-50">
+                        <img src="/images/thanks.jpg" title="Bedankt voor het doneren" alt="Bedankt voor het doneren">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- footer -->

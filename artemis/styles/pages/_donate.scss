@@ -1,0 +1,24 @@
+.latest-donates {
+    .flex {
+        gap: 2em;
+    }
+    ul {
+        padding: 1em;
+        margin: 1.5em 0 0 0;
+        list-style: none;
+        border: 1px solid var(--border);
+        border-radius: $border-radius;
+
+        li {
+            margin: .5em 0;
+            text-align: justify;
+
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+    img {
+        border-radius: $border-radius;
+    }
+}
