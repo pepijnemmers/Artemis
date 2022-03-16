@@ -1,22 +1,6 @@
 $(document).ready(function() {
-    // test for change slides
-    $(".donate-right .logo").click(function() {
-        if (!$(".first-slide").hasClass("hidden")) {
-            $(".first-slide").addClass("hidden");
-            $(".second-slide").removeClass("hidden");
-        } 
-        else if ($(".first-slide").hasClass("hidden") && $(".third-slide").hasClass("hidden")) {
-            $(".second-slide").addClass("hidden");
-            $(".third-slide").removeClass("hidden");
-        } 
-        else if ($(".first-slide").hasClass("hidden") && $(".second-slide").hasClass("hidden")) {
-            $(".first-slide").removeClass("hidden");
-            $(".third-slide").addClass("hidden");
-        }
-    });
-
-    // Localstorage clearen
-    localStorage.clear();
+    // Localstorage clearen of scherm tonen
+    localStorage.clear();    
 
     // variable aanmaken
     let selectedPrice = 0;
@@ -83,27 +67,53 @@ $(document).ready(function() {
 
     // second slide
         // verstuur knop
-        $(".btn#toSecSlide").click(function() {
-            
-        });
-        
+        document.getElementById("donateForm").addEventListener("submit", () => {
+            fullname = $(".second-slide #name").val();
+            email = $(".second-slide #email").val();
+            setLocalStorage(fullname, email);
+
+            $(".second-slide").addClass("hidden");
+            $(".third-slide").removeClass("hidden");
+
+            updateContent();
+        });          
+
         // vorige knop
         $(".back-btn#toFirstSlide").click(function() {
             $(".first-slide").removeClass("hidden");
             $(".second-slide").addClass("hidden");
         });
 
-    // third slide
-        // Data aanpassen
-            // 1. Totalprice
-            // 2. TotalDonaters
-            // 3. Progresbar
-            // 4. Array met namen (loopen bij "Bedankt voor je donatie  + naam ")
-            // 5. Laatste donateurs
-        // sluiten knop werkend maken
-        // opslaan in localstorage
+    // set local storage
+    function setLocalStorage(fullname, email) {
+        localStorage.setItem("price", selectedPrice);
+        localStorage.setItem("name", fullname);
+        localStorage.setItem("email", email);
+    }        
 
-        
+    // third slide - content aanpassen
+    function updateContent() {
+        // Totalprice
+        let totalPrice = 321 + parseInt(localStorage.getItem("price"));
+        document.getElementById("totalPrice").innerHTML = `€${totalPrice},00`;
+
+        // Progresbar
+        document.getElementById("progressbar").style.width = (totalPrice * 100 / 1980) + "%";
+
+        // TotalDonaters
+        let totalDonaters = 15;
+        let newDonaters = totalDonaters + 1;
+        document.getElementById("totalDonates").innerHTML = newDonaters + " Donateurs"
+
+        // Nieuwste donateur toevoegen
+        document.getElementById("thanksDonater").innerHTML = localStorage.getItem("name");
+
+        // Laatste donateurs
+        const latestDonatersHtml = `<li><span>${localStorage.getItem("name")}</span> met een donatie van <span>€${localStorage.getItem("price")},00</span></li>`
+        $(".latest-donates ul").prepend(latestDonatersHtml);
+    }     
+
+     
     // share menu
 
 });

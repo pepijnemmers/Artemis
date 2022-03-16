@@ -66,13 +66,13 @@
                             <div class="top">
                                 <div class="flex justify-between align-center">
                                     <div>
-                                        <div class="totalprice" id="totalPrice">€321,85</div>
+                                        <div class="totalprice" id="totalPrice">€321,00</div>
                                         <div class="goal">van de €1980,- als doel</div>
                                     </div>
                                     <div class="totaldonates"><a href="#donaters" class="btn--link" id="totalDonates">15 Donateurs</a></div>
                                 </div>
                                 <div class="progressbar">
-                                    <div class="bar" data-price="321.85"></div>
+                                    <div class="bar" id="progressbar"></div>
                                 </div>
                             </div>
                             <div class="middle">
@@ -86,7 +86,7 @@
                                 <div class="thanks flex align-center">
                                     <img src="/images/heart.svg" alt="hartje">
                                     <p>
-                                        Bedankt voor je donatie <span id="thanksDonater">donateursnaam</span>
+                                        Bedankt voor je donatie <span id="thanksDonater">Pedro Donaldson</span>
                                     </p>
                                 </div>
                             </div>
@@ -117,8 +117,7 @@
                         <div class="second-slide hidden">
                             <button class="back-btn flex align-center" id="toFirstSlide">&lt;&nbsp; Vorige</button>
                             <h3>Doneer eenmalig <br>en help een dier in nood</h3>
-
-                            <form action="#" method="post" autocomplete="off">
+                            <form action="#" method="post" autocomplete="off" id="donateForm" onsubmit="event.preventDefault();">
                                 <div>
                                     <input type="text" name="name" id="name" required>
                                     <label for="name">Naam*</label>
@@ -127,18 +126,14 @@
                                     <input type="text" name="email" id="email" required>
                                     <label for="email">Emailadres*</label>
                                 </div>
+                                <button class="btn btn--primary" id="toThirdSlide">Verstuur donatie van €<span class="bedrag" id="btnBedragSecSlide"></span></button>
                             </form>
-                            
-                            <button class="btn btn--primary">Verstuur donatie van €<span class="bedrag" id="btnBedragSecSlide"></span></button>
                             <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
                         </div>
                         <!-- third slide -->
                         <div class="third-slide hidden">
                             <h3>Bedankt voor uw gift! <br><span>Het wordt enorm gewaardeerd.</span></h3>
                             <img src="/images/thanks-donate.jpg" title="Bedankt voor het doneren" alt="Bedankt voor het doneren">
-
-                            <button class="btn btn--primary">Sluiten</button>
-                            <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
                         </div>
                     </div>
                 </div>
@@ -153,11 +148,11 @@
                         <p>Bedankt voor jullie hulp! Het wordt enorm gewaardeerd.</p>
                         
                         <ul>
-                            <li><span>Pedro Donaldson</span>    met een donatie van     <span>€30,00</span></li>
-                            <li><span>Rianne</span>             met een donatie van     <span>€5,00</span></li>
-                            <li><span>Frank Utrecht</span>      met een donatie van     <span>€125,10</span></li>
-                            <li><span>Ally</span>               met een donatie van     <span>€25,00</span></li>
-                            <li><span>Roderick Govert</span>    met een donatie van     <span>€10,00</s></li>
+                            <li><span>Pedro Donaldson</span> met een donatie van <span>€30,00</span></li>
+                            <li><span>Rianne</span> met een donatie van <span>€5,00</span></li>
+                            <li><span>Frank Utrecht</span> met een donatie van <span>€125,00</span></li>
+                            <li><span>Ally</span> met een donatie van <span>€25,00</span></li>
+                            <li><span>Roderick Govert</span> met een donatie van <span>€10,00</s></li>
                         </ul>
                     </div>
                     <div class="flex-col-50">

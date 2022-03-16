@@ -1133,7 +1133,8 @@ form button[type=submit] {
 }
 .donate .donate-left .donate-info .top .progressbar .bar {
   position: absolute;
-  width: 5%;
+  width: 16%;
+  max-width: 100% !important;
   height: 100%;
   border-radius: 1em;
   background-color: var(--primary-color);
@@ -1349,6 +1350,9 @@ form button[type=submit] {
 .donate .donate-right .third-slide h3 span {
   font-size: 0.9em;
 }
+.donate .donate-right .third-slide img {
+  margin-bottom: 0.5em;
+}
 
 section {
   position: relative;
@@ -1375,9 +1379,13 @@ section:first-of-type {
 .latest-donates ul li {
   margin: 0.5em 0;
   text-align: justify;
+  display: none;
 }
 .latest-donates ul li span {
   font-weight: 600;
+}
+.latest-donates ul li:nth-child(1), .latest-donates ul li:nth-child(2), .latest-donates ul li:nth-child(3), .latest-donates ul li:nth-child(4), .latest-donates ul li:nth-child(5) {
+  display: block;
 }
 .latest-donates img {
   border-radius: 0.2em;
