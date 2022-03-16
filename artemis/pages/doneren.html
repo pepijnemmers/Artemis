@@ -55,24 +55,6 @@
     </header>
 
     <!-- main -->
-
-    <!-- 
-        TODO
-        - rechtse deel maken met html cs
-        - javascript deel maken voor formulier 
-            - niet vergeten bedrag in send buttons toe te voegen
-            slide 1. { 
-                - Buttons selecteren en active class toevoegen
-                - Selected price in button tonen
-            }
-        - array maken met donateursnamen en die loopen in "bedankt voor je donatie + naam"
-        - als gedoneerd is, javascript variable/localstorage updaten en invullen in browser
-            1. Totalprice
-            2. TotalDonaters
-            3. Progresbar
-            4. Array met namen
-            5. Laatste donateurs
-    -->
     <main>
         <section class="donate">
             <div class="container">
@@ -84,10 +66,10 @@
                             <div class="top">
                                 <div class="flex justify-between align-center">
                                     <div>
-                                        <div class="totalprice">€321,85</div>
+                                        <div class="totalprice" id="totalPrice">€321,85</div>
                                         <div class="goal">van de €1980,- als doel</div>
                                     </div>
-                                    <div class="totaldonates"><a href="#donaters" class="btn--link">15 Donateurs</a></div>
+                                    <div class="totaldonates"><a href="#donaters" class="btn--link" id="totalDonates">15 Donateurs</a></div>
                                 </div>
                                 <div class="progressbar">
                                     <div class="bar" data-price="321.85"></div>
@@ -104,7 +86,7 @@
                                 <div class="thanks flex align-center">
                                     <img src="/images/heart.svg" alt="hartje">
                                     <p>
-                                        Bedankt voor je donatie <span id="thanks-donater">donateursnaam</span>
+                                        Bedankt voor je donatie <span id="thanksDonater">donateursnaam</span>
                                     </p>
                                 </div>
                             </div>
@@ -115,24 +97,25 @@
                         <!-- first slide -->
                         <div class="first-slide">
                             <h3>Doneer eenmalig <br>en help een dier in nood</h3>
-                            <div class="flex">
-                                <button>€10,00</button>
-                                <button>€15,00</button>
-                                <button class="active">€25,00</button>
-                                <button>€50,00</button>
-                                <button>€100,00</button>
-                                <button>€200,00</button>
-                                <div class="input">
-                                    <input type="number" name="bedrag" id="bedrag" value="0.00" title="LET OP! Gebruik een punt (.)">
+                            <p class="msg"></p>
+                            <div class="flex" id="priceSelections">
+                                <button data-price="10" id="priceSelection1">€10,-</button>
+                                <button data-price="15" id="priceSelection2">€15,-</button>
+                                <button data-price="25" class="active" id="priceSelection3">€25,-</button>
+                                <button data-price="50" id="priceSelection4">€50,-</button>
+                                <button data-price="100" id="priceSelection5">€100,-</button>
+                                <button data-price="200" id="priceSelection6">€200,-</button>
+                                <div class="input" id="priceSelection7" data-price="0">
+                                    <input type="number" name="bedrag" id="bedrag" value="0" title="LET OP! Alleen hele bedragen">
                                     <label for="bedrag">Anders: <span>€</span></label>
                                 </div>
                             </div>
-                            <button class="btn btn--primary">Doneer €<span class="bedrag"></span></button>
+                            <button class="btn btn--primary" id="toSecSlide">Doneer €<span class="bedrag" id="btnBedragFirstSlide"></span></button>
                             <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
                         </div>
                         <!-- second slide -->
                         <div class="second-slide hidden">
-                            <button class="back-btn flex align-center">&lt;&nbsp; Vorige</button>
+                            <button class="back-btn flex align-center" id="toFirstSlide">&lt;&nbsp; Vorige</button>
                             <h3>Doneer eenmalig <br>en help een dier in nood</h3>
 
                             <form action="#" method="post" autocomplete="off">
@@ -146,7 +129,7 @@
                                 </div>
                             </form>
                             
-                            <button class="btn btn--primary">Verstuur donatie van €<span class="bedrag"></span></button>
+                            <button class="btn btn--primary">Verstuur donatie van €<span class="bedrag" id="btnBedragSecSlide"></span></button>
                             <p class="sm-text">Vragen over doneren? Neem <a href="/pages/contact.html" class="link">contact</a> op</p>
                         </div>
                         <!-- third slide -->

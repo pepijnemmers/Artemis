@@ -1,4 +1,7 @@
 .donate {
+    input, textarea {
+        box-shadow: inset 0 0 50rem var(--white);
+    }
     .donate-box > div {
         background-color: var(--white);
         border: 1px solid var(--border);
@@ -130,14 +133,13 @@
                 color: #666;
                 background-color: var(--white);
                 padding: .5em 0;
-                border: none;
+                border: 2px solid transparent;
                 border-radius: $border-radius;
-                box-shadow: 0 0 5px var(--box-shadow-20);   
-                transition: all $transition;
+                box-shadow: 0 0 5px var(--box-shadow-20);
                 
                 &.active {
                     $corner-offset: 3px;
-                    border: 2px solid var(--sec-color);
+                    border-color: var(--sec-color);
                     color: var(--sec-color);
                     font-weight: 600;
                     background: var(--white) url(/images/checkmark-yellow.svg) no-repeat calc(100% - $corner-offset) $corner-offset;
@@ -146,12 +148,38 @@
             }
             > .input {
                 flex: 1 1 100%;
-
                 position: relative;
                 font-size: 1.8rem;
                 background-color: var(--white);
+                border: 2px solid transparent;
                 border-radius: $border-radius;
                 box-shadow: 0 0 5px var(--box-shadow-20);    
+                cursor: pointer;
+
+                &.active {
+                    $corner-offset: 3px;
+                    border-color: var(--sec-color);
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: $corner-offset;
+                        top: $corner-offset;
+                        background: url(/images/checkmark-yellow.svg) no-repeat;
+                        background-size: 1em;
+                        width: 1em;
+                        height: 1em;
+                    }
+                    input {
+                        padding-right: 1.5em;
+                        color: var(--sec-color);
+                        font-weight: 600;
+                    }
+                    label span {
+                        font-weight: 600;
+                        color: var(--sec-color);
+                    }
+                }
 
                 input {
                     border: none;
@@ -170,6 +198,7 @@
                     left: 1em;
                     font-style: italic;
                     color: #999;
+                    pointer-events: none;
 
                     span {
                         font-size: 1.8rem;
@@ -180,8 +209,19 @@
                 }
             }
         }
+        .msg:not(:empty) {
+            width: fit-content;
+            margin: -1em auto 1em auto;
+            font-weight: 600;
+            font-style: italic;
+            color: red;
+            padding-left: 2em;
+            background: url(/images/warning.svg) no-repeat left 46%;
+            background-size: 1.3em;
+        }
         button.btn {
             width: 100%;
+            text-align: center;
             text-align: center;
             margin-top: 2em;
             margin-bottom: .5em;
@@ -217,6 +257,9 @@
 
             input, label {
                 background-color: var(--white) !important;
+            }
+            label {
+                pointer-events: none;
             }
         }
         .second-slide {
