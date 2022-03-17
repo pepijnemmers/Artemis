@@ -1,11 +1,12 @@
 // Abstract files
-@import "abstracts/_variables.scss";
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
 
 // Core files
 @import "core/all";
 
 // Mixins
-@import "abstracts/_mixins.scss";
+@import "abstracts/mixins";
 
 // Components
 @import "components/all";

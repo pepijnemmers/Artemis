@@ -1,0 +1,11 @@
+@media screen and (max-width: 950px) {
+    header nav {
+        display: none;
+    }
+    footer {
+        min-height: 80rem;
+        .container {
+            display: none;
+        }
+    }
+}

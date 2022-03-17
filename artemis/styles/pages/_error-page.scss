@@ -1,0 +1,26 @@
+main.error-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: max(57.2vh, 55rem);
+    text-align: center;
+
+    h1 {
+        position: absolute;
+        z-index: -1;
+        font-size: clamp(15rem, -0.7142857142857135rem + 49.107142857142854vw, 70rem);
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        color: rgba(0,0,0,.05);
+    }
+    p {
+        width: min(100% - 2rem, 60%);
+        margin: 0 auto 3em auto;
+    }
+    .buttons {
+        gap: 1em;
+    }
+}
