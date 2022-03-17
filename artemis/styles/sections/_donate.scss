@@ -73,13 +73,34 @@
                 align-items: baseline;
 
                 .share {
+                    position: relative;
                     display: flex;
                     align-items: center;
                     gap: 1em;
+                    opacity: 1;
+                    padding: 0.5em 3em;
+                    transition: opacity 500ms ease;
 
+                    &.copied span:not(#copied), &.copied img {
+                        opacity: .1;
+                    }
                     img {
                         height: 1.3em;
                         width: auto;
+                    }
+                    #copied {
+                        pointer-events: none;
+                        position: absolute;
+                        inset: -1em;
+                        line-height: 7.3rem;
+                        background-color: rgba(255,255,255,.4);
+                        color: #282828;
+                        opacity: 0;
+                        transition: opacity 250ms ease;
+                    }
+                    &.copied #copied {
+                        transition: opacity 500ms ease;
+                        opacity: 1;
                     }
                 }
                 .thanks {

@@ -57,11 +57,11 @@ $(document).ready(function() {
         
         // verstuur knop
         $(".btn#toSecSlide").click(function() {
-            if (selectedPrice >= 5) {
+            if (selectedPrice >= 2) {
                 $(".first-slide").addClass("hidden");
                 $(".second-slide").removeClass("hidden");
             } else {
-                $(".first-slide .msg").html("Het minimale bedrag is €5,-");
+                $(".first-slide .msg").html("Het minimale bedrag is €2,-");
             }
         });
 
@@ -115,5 +115,28 @@ $(document).ready(function() {
 
      
     // share menu
+    $(".share").click(function() {
+        const text = window.location;
+        try {
+            navigator.clipboard.writeText(text);
+            $(".share").addClass("copied");
+            setTimeout(function() {
+                $(".share").removeClass("copied");
+            }, 2500);
+        } catch {
+            window.prompt("Kopieer: Ctrl + C, Enter", text);
+        }
+    });
 
+    // show all donaters
+    $("#showAllDonates").click(function() {
+        if ($(".latest-donates ul").hasClass("show-all")) {
+            $(".latest-donates ul").removeClass("show-all");
+            $("#showAllDonates").html("Toon alle");
+        }
+        else {
+            $(".latest-donates ul").addClass("show-all");
+            $("#showAllDonates").html("Toon eerste 5");
+        }
+    });    
 });

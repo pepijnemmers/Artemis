@@ -3,12 +3,15 @@
         gap: 2em;
     }
     ul {
-        padding: 1em;
+        padding: .3em 1em;
         margin: 1.5em 0 0 0;
         list-style: none;
         border: 1px solid var(--border);
         border-radius: $border-radius;
 
+        &.show-all li {
+            display: block;
+        }
         li {
             margin: .5em 0;
             text-align: justify;
@@ -25,6 +28,10 @@
                 display: block;
             }
         }
+    }
+    ul + a.btn--link {
+        display: inline-block;
+        margin-top: 1em;
     }
     img {
         border-radius: $border-radius;

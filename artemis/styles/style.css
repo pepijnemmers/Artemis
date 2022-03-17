@@ -103,6 +103,10 @@ abbr {
   cursor: help;
 }
 
+.unset-all {
+  all: unset;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -386,7 +390,7 @@ button {
 .btn--link:hover, .btn--link:focus {
   text-decoration: none;
 }
-.btn--link:focus {
+.btn--link:focus-visible {
   outline: 2px solid #292929;
 }
 .btn--link[disabled], .btn--link.btn--disabled {
@@ -1153,6 +1157,7 @@ form button[type=submit] {
           align-items: baseline;
 }
 .donate .donate-left .donate-info .bottom .share {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1160,10 +1165,33 @@ form button[type=submit] {
       -ms-flex-align: center;
           align-items: center;
   gap: 1em;
+  opacity: 1;
+  padding: 0.5em 3em;
+  -webkit-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+}
+.donate .donate-left .donate-info .bottom .share.copied span:not(#copied), .donate .donate-left .donate-info .bottom .share.copied img {
+  opacity: 0.1;
 }
 .donate .donate-left .donate-info .bottom .share img {
   height: 1.3em;
   width: auto;
+}
+.donate .donate-left .donate-info .bottom .share #copied {
+  pointer-events: none;
+  position: absolute;
+  inset: -1em;
+  line-height: 7.3rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #282828;
+  opacity: 0;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+.donate .donate-left .donate-info .bottom .share.copied #copied {
+  -webkit-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+  opacity: 1;
 }
 .donate .donate-left .donate-info .bottom .thanks {
   gap: 0.5em;
@@ -1370,11 +1398,14 @@ section:first-of-type {
   gap: 2em;
 }
 .latest-donates ul {
-  padding: 1em;
+  padding: 0.3em 1em;
   margin: 1.5em 0 0 0;
   list-style: none;
   border: 1px solid var(--border);
   border-radius: 0.2em;
+}
+.latest-donates ul.show-all li {
+  display: block;
 }
 .latest-donates ul li {
   margin: 0.5em 0;
@@ -1386,6 +1417,10 @@ section:first-of-type {
 }
 .latest-donates ul li:nth-child(1), .latest-donates ul li:nth-child(2), .latest-donates ul li:nth-child(3), .latest-donates ul li:nth-child(4), .latest-donates ul li:nth-child(5) {
   display: block;
+}
+.latest-donates ul + a.btn--link {
+  display: inline-block;
+  margin-top: 1em;
 }
 .latest-donates img {
   border-radius: 0.2em;

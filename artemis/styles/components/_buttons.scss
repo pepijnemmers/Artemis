@@ -73,7 +73,7 @@ button {
         &:hover, &:focus {
             text-decoration: none;
         }
-        &:focus {
+        &:focus-visible {
             outline: 2px solid #292929;
         }
         &[disabled], &.btn--disabled {
