@@ -101,7 +101,7 @@ $(document).ready(function() {
         document.getElementById("progressbar").style.width = (totalPrice * 100 / 1980) + "%";
 
         // TotalDonaters
-        let totalDonaters = 15;
+        let totalDonaters = 9;
         let newDonaters = totalDonaters + 1;
         document.getElementById("totalDonates").innerHTML = newDonaters + " Donateurs"
 
@@ -132,7 +132,7 @@ $(document).ready(function() {
     $("#showAllDonates").click(function() {
         if ($(".latest-donates ul").hasClass("show-all")) {
             $(".latest-donates ul").removeClass("show-all");
-            $("#showAllDonates").html("Toon alle");
+            $("#showAllDonates").html("Bekijk alle");
         }
         else {
             $(".latest-donates ul").addClass("show-all");
