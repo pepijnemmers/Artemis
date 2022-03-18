@@ -1,3 +1,14 @@
+$(document).ready(function() {
+    // Large slick slider with center mode
+    $('.slick-center-lg').slick({
+        dots: true,
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 3
+    });
+});
+
 const tl = gsap.timeline({ defaults: { ease: "Power3.easeOut", duration: 2 } });
 tl.delay(.5);
 
