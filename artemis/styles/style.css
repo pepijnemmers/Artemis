@@ -1034,6 +1034,7 @@ footer .container:last-child a:hover, footer .container:last-child a:focus {
   height: 100%;
   width: 100%;
   border-radius: 0.2em;
+  border: none;
 }
 
 form {
@@ -1438,7 +1439,7 @@ section {
   margin: max(10rem, 5vh) 0;
 }
 section:first-of-type {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .homepage section:first-of-type {
