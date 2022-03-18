@@ -920,19 +920,28 @@ footer .container:last-child a:hover, footer .container:last-child a:focus {
   text-align: center;
   padding-bottom: 5%;
 }
-.hero h1, .hero p {
+.hero .hero-text h1, .hero .hero-text p {
   color: inherit;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
 }
-.hero h1 {
+.hero .hero-text h1 {
   font-size: 4rem !important;
   max-width: 65rem;
   line-height: 1.1;
   margin-bottom: 0.5em;
   letter-spacing: 2px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
-.hero p {
+.hero .hero-text p {
   max-width: 80rem;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 .hero .btns {
   display: -webkit-box;
@@ -940,6 +949,11 @@ footer .container:last-child a:hover, footer .container:last-child a:focus {
   display: flex;
   gap: 1em;
   margin-top: 2em;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 .hero .btns .btn--outline {
   font-weight: 700;

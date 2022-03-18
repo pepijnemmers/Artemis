@@ -22,24 +22,35 @@
         text-align: center;
         padding-bottom: 5%;
     }
-    h1, p {
-        color: inherit;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
-    }
-    h1 {
-        font-size: 4rem !important;
-        max-width: 65rem;
-        line-height: 1.1;
-        margin-bottom: 0.5em;
-        letter-spacing: 2px;
-    }
-    p {
-        max-width: 80rem;
+    .hero-text {
+        h1, p {
+            color: inherit;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 4rem !important;
+            max-width: 65rem;
+            line-height: 1.1;
+            margin-bottom: 0.5em;
+            letter-spacing: 2px;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        p {
+            max-width: 80rem;
+            opacity: 0;
+            transform: translateY(50px);
+        }
     }
     .btns {
         display: flex;
         gap: 1em;
         margin-top: 2em;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        opacity: 0;
+        transform: translateY(50px);
 
         .btn--outline {
             font-weight: 700;
