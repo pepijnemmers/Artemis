@@ -47,12 +47,12 @@ $slider-gap: 3em;
             }
             &.slick-prev {
                 left: 33rem;
-                background-image: url(/images/slider-arrow-left.svg);
+                background-image: url(../images/slider-arrow-left.svg);
                 background-position: 45% center;
             }
             &.slick-next {
                 right: 33rem;
-                background-image: url(/images/slider-arrow-right.svg);
+                background-image: url(../images/slider-arrow-right.svg);
                 background-position: 54.5% center;
             }
         }
