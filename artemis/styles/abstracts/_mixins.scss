@@ -1,35 +1,5 @@
-.hidden {
-    display: none;
-}
-
-// flex
-.flex, .row {
-    display: flex;
-}
-.align-center {
-    align-items: center;
-}
-.justify-center {
-    justify-content: center;
-}
-.justify-between {
-    justify-content: space-between;
-}
-// flex-grow | flex-shrink | flex-basis
-.flex-col-50 {
-    flex: 1 1 50%;
-}
-.flex-col-70 {
-    flex: 1 1 70%;
-}
-.flex-col-33 {
-    flex: 1 1 33%;
-}
-.flex-col-33 {
-    flex: 1 1 30%;
-}
-
-// grid
-.grid {
-    display: grid;
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
 }
