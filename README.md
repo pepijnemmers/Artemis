@@ -1,2 +1,2 @@
 # Frontend development Artemis
-Keuzedeel frontend development leerjaar 2
+Oefening 1 & 2 - Keuzedeel frontend development leerjaar 2
