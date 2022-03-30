@@ -37,7 +37,7 @@
             margin: 0 auto;
         }
         h1 {
-            font-size: 4rem !important;
+            font-size: clamp(3rem, 2.25rem + 2.08vw, 4rem) !important;
             max-width: 65rem;
             line-height: 1.1;
             margin-bottom: 0.5em;

@@ -4,7 +4,7 @@ $news-radius: 5px;
 .newsitems .row {
     justify-content: space-between;
     gap: $news-gap;
-    margin: $news-gap - ($news-gap / 2) 0;
+    margin: calc($news-gap / 2) 0;
 
     &:not(:first-child) {
         margin: $news-gap 0;

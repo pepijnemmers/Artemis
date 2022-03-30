@@ -1,11 +1,47 @@
 footer {
     background-color: var(--white);
     box-shadow: -5px 0 8px var(--box-shadow-10);
-    font-size: 1.5rem;
+    font-size: $footer-fs;
     padding: 2em 0 1em 0;
 
     .container:first-child {
         gap: 2em;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 1em;
+
+            .footer-col:not(:first-child) {
+                h3 {
+                    position: relative;
+                    padding: .5em 0;
+                    cursor: pointer;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: url(../images/footer-arrow.svg) no-repeat 95% 50%;
+                        background-size: 1em;
+                    }
+                }
+                &.open {
+                    h3::after {
+                        transform: rotateX(180deg);
+                        transform-origin: center;
+                    }
+                    a, span {
+                        display: block !important;
+                    }
+                    a.btn--primary {
+                        display: inline-block !important;
+                    }
+                }
+            }
+            .footer-col a,
+            .footer-col span {
+                display: none !important;
+            }
+        }
         
         .footer-col {
             flex: 1 1 20%;
@@ -25,10 +61,13 @@ footer {
                 font-style: italic;
             }
             &:nth-child(2) {
-                flex: 15%;
+                flex: 1 1 15%;
             }
             &:nth-child(3) {
-                flex: 25%;
+                flex: 1 1 25%;
+            }
+            @include desktop-s {
+                flex: 1 1 25%;
             }
         }
 
@@ -41,6 +80,13 @@ footer {
                 height: 5em;
                 width: auto;
                 margin-bottom: 1em;
+            }
+            @include desktop-s {
+                flex: 1 1 30%;
+                margin-right: 0;
+            }
+            @include tablet {
+                margin-bottom: 1.5em;
             }
         }
     }
@@ -57,6 +103,31 @@ footer {
             
             &:hover, &:focus {
                 text-decoration: underline;
+            }
+        }
+        @include tablet {
+            flex-direction: column;
+
+            > div {
+                display: flex;
+                align-items: center;
+                gap: max(10vw, 2em);
+                margin-top: .8em;
+            }
+        }
+        @include mobile {
+            flex-direction: column-reverse;
+            text-align: center;
+
+            > div {
+                display: block;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: .8em;
+                    text-decoration: underline;
+                }
             }
         }
     }

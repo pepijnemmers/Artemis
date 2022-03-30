@@ -7,7 +7,21 @@ $(document).ready(function() {
         } else {
             $("header").removeClass("scrolled")
         }
-    })
+    });
+
+    // Change hamburger / mobile menu onclick
+    $(".hamburger").click(function() {
+        $(this).toggleClass("active");
+        $(this).parent().toggleClass("active");
+    });
+
+    // open footer col on mobile
+    $("footer .footer-col h3").click(function() { 
+        let clickedCol = $(this).parent();
+        if ($(window).width() <= 768) {
+            clickedCol.toggleClass("open");
+        }
+    });
 });
 
 // contact form

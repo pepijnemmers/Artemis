@@ -8,8 +8,7 @@ header {
     background-color: var(--white);
     box-shadow: 5px 0 8px var(--box-shadow-10);
     font-size: 1.6rem;
-    transition: margin-bottom $transition,
-                margin-top $transition;
+    transition: margin-bottom $transition, margin-top $transition;
 
     .container {
         display: flex;
@@ -27,6 +26,10 @@ header {
             font-size: 2rem;
             font-weight: 700;
             color: var(--sec-color);
+
+            @include mobile {
+                display: none;
+            }
         }
         img {
             width: auto;
@@ -41,28 +44,100 @@ header {
         }
     }
 
-    nav ul {
-        display: flex;
-        align-items: center;
-        gap: .8em;
-        list-style: none;
+    nav {
+        .hamburger {
+            display: none;
+            justify-content: space-between;
+            flex-direction: column;
+            width: 3.5rem;
+            height: 3rem;
+            cursor: pointer;
+            transition: width $transition;
 
-        li a {
-            position: relative;
-            display: block;
-            font-weight: inherit;
-            text-decoration: none;
-            color: inherit;
-            padding: .6em .8em;
-            border-radius: .2em;
-            transition: background-color $transition;
-
-            &:not(.btn):hover, &:not(.btn):focus {
-                background-color: var(--active-link-bg);
-                outline: none;
+            .line {
+                display: block;
+                width: 100%;
+                height: .2em;
+                background-color: #777;
+                border-radius: 2em;
+                transition: all 0.3s ease-in-out;
             }
             &.active {
-                font-weight: 700;
+                transition: all 0.3s ease-in-out;
+                transition-delay: 0.6s;
+                transform: rotate(45deg);
+
+                .line:nth-child(1) {
+                    transform: translateY(0.7em);
+                }
+                .line:nth-child(2) {
+                    width: 0;
+                }
+                .line:nth-child(1),
+                .line:nth-child(3){
+                    transition-delay: 0.3s;
+                }
+                .line:nth-child(3) {
+                    transform: translateY(-1em) rotate(90deg);
+                }
+            }
+
+            @include desktop-s {
+                display: flex;
+            }
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 0.8em;
+            list-style: none;
+            box-shadow: none;
+            transition: box-shadow 0s ease;
+
+
+            @include desktop-s {
+                position: absolute;
+                z-index: -1;
+                left: 50%;
+                top: -30em; // 100%
+                width: 100vw;
+                overflow: hidden;
+                transform: translateX(-50%);
+                flex-direction: column;
+                padding: 1em 0 1.5em 0;
+                margin: 0;
+                min-height: 40vh;
+                background-color: var(--white);
+                box-shadow: 0 5px 8px -3px var(--box-shadow-20);
+                transition: top .8s ease, box-shadow 250ms ease;
+            }
+            @include mobile {
+                padding-top: 1em;
+            }
+
+            li a {
+                position: relative;
+                display: block;
+                font-weight: inherit;
+                text-decoration: none;
+                color: inherit;
+                padding: 0.6em 0.8em;
+                border-radius: 0.2em;
+                transition: background-color $transition;
+
+                &:not(.btn):hover,
+                &:not(.btn):focus {
+                    background-color: var(--active-link-bg);
+                    outline: none;
+                }
+                &.active {
+                    font-weight: 700;
+                }
+            }
+        }
+        &.active ul {
+            @include desktop-s {
+                top: 100%;
             }
         }
     }
@@ -72,3 +147,10 @@ header {
     height: 8rem;
     box-shadow: none;
 }
+
+
+
+// .container {
+//     border-left: 1px solid red;
+//     border-right: 1px solid red;
+// }

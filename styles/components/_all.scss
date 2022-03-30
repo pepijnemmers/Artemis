@@ -3,11 +3,4 @@
 @import "_slider.scss";
 @import "_newsitems.scss";
 @import "_animal-card.scss";
-
-// other components
-.container {
-    position: relative;
-    width: 1280px;
-    max-width: 95%;
-    margin-inline: auto;
-}
+@import "_container.scss";
