@@ -15,6 +15,12 @@
 .justify-between {
     justify-content: space-between;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
 
 // flex-grow | flex-shrink | flex-basis
 .flex-col-50 {

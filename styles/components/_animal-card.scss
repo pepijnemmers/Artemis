@@ -18,8 +18,7 @@
     }
     .img {
         z-index: 0;
-        width: 28rem;
-        height: 28rem;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: $border-radius;
 
@@ -47,7 +46,7 @@
         left: 0;
         bottom: 0;
         padding: 0 .8em;
-        font-size: 1.4rem;
+        font-size: clamp(1.2rem, 1.11rem + 0.24vw, 1.4rem);
 
         opacity: 0;
         pointer-events: none;
@@ -57,13 +56,21 @@
             transition: top $transition;
         }
         h2 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 1.66rem + 0.95vw, 2.8rem);
             line-height: 1;
+            white-space: nowrap;
             color: var(--white);
             top: 3em;
         }
         p {
             top: 2em;
+
+            @media screen and (min-width: 768px) and (max-width: 1235px) {
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                overflow: hidden;
+            }
         }
         .btn {
             margin: .8em 0;
@@ -101,6 +108,20 @@
         &::after, .ras, .desc, .desc .btn {
             opacity: 1;
             pointer-events: all;
+        }
+    }
+    @include tablet {
+        a {
+            .desc h2, .desc p {
+                top: 0;
+            }
+            .ras {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            &::after, .ras, .desc, .desc .btn {
+                opacity: 1;
+                pointer-events: all;
+            }
         }
     }
 }

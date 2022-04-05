@@ -3,6 +3,8 @@ $slider-gap: 3em;
 .slider {
     margin-top: 12vh !important;
     margin-bottom: 12vh !important;
+    max-width: 100%;
+    overflow: hidden;
 
     // large centermode slick slider
     .slick-center-lg {
@@ -23,6 +25,18 @@ $slider-gap: 3em;
                 filter: grayscale(.7) contrast(80%);
                 opacity: .7;
                 transition: all 400ms ease;
+
+                @include tablet {
+                    padding: 0 2em;
+                }
+                @include mobile {
+                    padding: 0 1em;
+                }
+            }
+            @include mobile {
+                .slick-center {
+                    min-width: 60vw;
+                }
             }
         }
 
@@ -35,6 +49,12 @@ $slider-gap: 3em;
             height: 4rem;
             outline: 2px solid var(--background);
             border-radius: 50%;
+
+            @include tablet {
+                width: 3rem;
+                height: 3rem;
+                outline-width: 1px;
+            }
 
             &::before {
                 content: none;
@@ -49,11 +69,25 @@ $slider-gap: 3em;
                 left: 33rem;
                 background-image: url(../images/slider-arrow-left.svg);
                 background-position: 45% center;
+
+                @include desktop-s {
+                    left: 20%;
+                }
+                @include mobile {
+                    left: 6rem;
+                }
             }
             &.slick-next {
                 right: 33rem;
                 background-image: url(../images/slider-arrow-right.svg);
                 background-position: 54.5% center;
+
+                @include desktop-s {
+                    right: 20%;
+                }
+                @include mobile {
+                    right: 6rem;
+                }
             }
         }
 

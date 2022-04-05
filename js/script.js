@@ -13,7 +13,7 @@ $(document).ready(function() {
     $(".hamburger").click(function() {
         $(this).toggleClass("active");
         $(this).parent().toggleClass("active");
-    });
+    });    
 
     // open footer col on mobile
     $("footer .footer-col h3").click(function() { 

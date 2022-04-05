@@ -1,6 +1,10 @@
 .contact {
     .row {
         gap: 2em;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
     .row > div {
         flex-basis: 50%;
@@ -12,7 +16,6 @@
         .google-maps {
             width: max(80%, 50rem);
             max-width: 100%;
-            // aspect-ratio: 2 / 1.2;
             height: 30rem;
             margin-bottom: 1.5em;
             background-color: #eee;
@@ -28,10 +31,13 @@
 }
 
 form {
-    padding: 1em 1.5em;
+    padding: 1em 1.15em;
     border: 1px solid var(--border);
     border-radius: $border-radius;
 
+    @include desktop-s {
+        padding: 1em;
+    }
     div {
         position: relative;
         margin: 1.5em 0;

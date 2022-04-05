@@ -1,14 +1,16 @@
 /* header */
+$mobile-nav-transition: 0.3s ease-in-out;
+
 header {
     position: sticky;
     z-index: 99999;
-    top: 0;
+    top: -1px;
     left: 0;
     right: 0;
     background-color: var(--white);
     box-shadow: 5px 0 8px var(--box-shadow-10);
     font-size: 1.6rem;
-    transition: margin-bottom $transition, margin-top $transition;
+    transition: margin-bottom $transition, margin-top $transition, top $transition;
 
     .container {
         display: flex;
@@ -45,6 +47,23 @@ header {
     }
 
     nav {
+        @include desktop-s {
+            &::before {
+                content: "";
+                position: fixed;
+                z-index: -2;
+                inset: 0;
+                top: 7.5rem;
+                background-color: rgba(0, 0, 0, .2);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity $mobile-nav-transition;
+            }
+            &.active::before {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
         .hamburger {
             display: none;
             justify-content: space-between;
@@ -60,10 +79,10 @@ header {
                 height: .2em;
                 background-color: #777;
                 border-radius: 2em;
-                transition: all 0.3s ease-in-out;
+                transition: all $mobile-nav-transition;
             }
             &.active {
-                transition: all 0.3s ease-in-out;
+                transition: all $mobile-nav-transition;
                 transition-delay: 0.6s;
                 transform: rotate(45deg);
 
@@ -110,6 +129,12 @@ header {
                 background-color: var(--white);
                 box-shadow: 0 5px 8px -3px var(--box-shadow-20);
                 transition: top .8s ease, box-shadow 250ms ease;
+
+                li {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
             }
             @include mobile {
                 padding-top: 1em;
@@ -137,7 +162,7 @@ header {
         }
         &.active ul {
             @include desktop-s {
-                top: 100%;
+                top: 95%;
             }
         }
     }
@@ -147,10 +172,3 @@ header {
     height: 8rem;
     box-shadow: none;
 }
-
-
-
-// .container {
-//     border-left: 1px solid red;
-//     border-right: 1px solid red;
-// }
