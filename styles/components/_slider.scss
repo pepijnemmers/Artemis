@@ -55,7 +55,9 @@ $slider-gap: 3em;
                 height: 3rem;
                 outline-width: 1px;
             }
-
+            @include mobile {
+                display: none;
+            }
             &::before {
                 content: none;
             }

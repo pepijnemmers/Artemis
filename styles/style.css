@@ -491,6 +491,11 @@ button {
     outline-width: 1px;
   }
 }
+@media screen and (max-width: 460px) {
+  .slider .slick-center-lg .slick-arrow {
+    display: none;
+  }
+}
 .slider .slick-center-lg .slick-arrow::before {
   content: none;
 }
