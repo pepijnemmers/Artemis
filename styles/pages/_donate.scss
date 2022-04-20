@@ -1,6 +1,10 @@
 .latest-donates {
     .flex {
         gap: 2em;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
     ul {
         padding: .3em 1em;
@@ -17,6 +21,11 @@
             text-align: justify;
             display: none;
 
+            @include mobile {
+                padding: .5em 0 1em 0;
+                border-bottom: 1px solid var(--border);
+                text-align: unset;
+            }
             span {
                 font-weight: 600;
             }
@@ -26,6 +35,10 @@
             &:nth-child(4),
             &:nth-child(5) {
                 display: block;
+            }
+            &:nth-child(5) {
+                padding-bottom: .5em !important;
+                border-bottom: none !important;
             }
         }
     }

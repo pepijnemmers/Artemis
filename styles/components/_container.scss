@@ -2,5 +2,14 @@
     position: relative;
     width: 1280px;
     max-width: 90%;
-    margin-inline: auto;
+}
+@supports (margin-inline: auto) {
+    .container {
+        margin-inline: auto;
+    }
+}
+@supports not (margin-inline: auto) {
+    .container {
+        margin: 0 auto;
+    }
 }

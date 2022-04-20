@@ -1,4 +1,11 @@
 .donate {
+    .container > .flex {
+        position: relative;
+
+        @include tablet {
+            flex-direction: column-reverse;
+        }
+    }
     input, textarea {
         box-shadow: inset 0 0 50rem var(--white);
     }
@@ -6,10 +13,19 @@
         background-color: var(--white);
         border: 1px solid var(--border);
         box-sizing: content-box;
+
+        @include tablet {
+            flex: 1 1 100%;
+            max-width: unset;
+            box-sizing: border-box;
+        }
     }
     .donate-left {
         max-width: 67%;
 
+        @include tablet {
+            margin-top: 3rem;
+        }
         .banner {
             position: relative;
             height: 20rem;
@@ -18,6 +34,13 @@
             background-position: center 90%;
             background-size: cover;
 
+            @include tablet {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 15rem;
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -29,6 +52,11 @@
             padding: 1em;
 
             .top {
+                @include mobile {
+                    > .flex {
+                        flex-direction: column;
+                    }
+                }
                 .totalprice {
                     float: left;
                     margin-right: .5em;
@@ -67,11 +95,25 @@
 
                 h2 {
                     font-size: 2.6rem;
+
+                    @include desktop-s {
+                        font-size: 2rem;
+                    }
+                }
+                @include desktop-s {
+                    p {
+                        font-size: 1.4rem;
+                    }
                 }
             }
             .bottom {
                 align-items: baseline;
 
+                @include mobile {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.5em;
+                }
                 .share {
                     position: relative;
                     display: flex;
@@ -80,6 +122,13 @@
                     opacity: 1;
                     padding: 0.5em 3em;
                     transition: opacity 500ms ease;
+                    @include desktop-s {
+                        font-size: 1.4rem;
+                    }
+                    @include mobile {
+                        width: 100%;
+                        justify-content: center;
+                    }
 
                     &.copied span:not(#copied), &.copied img {
                         opacity: .1;
@@ -111,6 +160,16 @@
                     color: gray;
                     border-bottom: 1px solid var(--border);
 
+                    @include desktop-s {
+                        font-size: 1.1rem;
+                    }
+                    @include mobile {
+                        font-size: .95rem;
+
+                        img {
+                            width: 1.5em;
+                        }
+                    }
                     span {
                         font-weight: 700;
                     }
@@ -127,6 +186,12 @@
         padding-top: 4em;
         margin-left: -1px;
 
+        @include tablet {
+            box-sizing: border-box;
+            width: 100%;
+            margin-top: 15rem;
+            padding-top: 3.5em;
+        }
         .logo {
             position: absolute;
             top: 0;
@@ -137,6 +202,10 @@
                 width: 12rem;
                 height: auto;
                 transform: translateY(-50%);
+
+                @include tablet {
+                    width: 10rem;
+                }
             }
         }
         h3 {
@@ -158,6 +227,10 @@
                 border: 2px solid transparent;
                 border-radius: $border-radius;
                 box-shadow: 0 0 5px var(--box-shadow-20);
+
+                @include desktop-s {
+                    font-size: 1.4rem;
+                }
                 
                 &.active {
                     $corner-offset: 3px;
@@ -170,13 +243,18 @@
             }
             > .input {
                 flex: 1 1 100%;
+                display: flex;
+                flex-direction: row-reverse;
                 position: relative;
                 font-size: 1.8rem;
                 background-color: var(--white);
                 border: 2px solid transparent;
                 border-radius: $border-radius;
-                box-shadow: 0 0 5px var(--box-shadow-20);    
+                box-shadow: 0 0 5px var(--box-shadow-20);   
                 cursor: pointer;
+                @include desktop-s {
+                    font-size: 1.4rem;
+                }
 
                 &.active {
                     $corner-offset: 3px;
@@ -204,28 +282,26 @@
                 }
 
                 input {
+                    font-size: inherit;
                     border: none;
-                    width: 67%;
+                    outline: none;
                     border-radius: inherit;
                     padding: .5em;
                     padding-left: 0;
-                    float: right;
-                    outline: none;
-                    font-size: inherit;
+                    width: 80%;
                 }
                 label {
                     font-size: 1.6rem;
-                    position: absolute;
-                    top: 0.55em;
-                    left: 1em;
                     font-style: italic;
+                    line-height: 2.5;
                     color: #999;
                     pointer-events: none;
+                    white-space: nowrap;
+                    padding: 0 .5em;
 
                     span {
                         font-size: 1.8rem;
                         font-style: normal;
-                        margin-left: .5em;
                         color: var(--text);
                     }
                 }
@@ -243,7 +319,6 @@
         }
         button.btn {
             width: 100%;
-            text-align: center;
             text-align: center;
             margin-top: 2em;
             margin-bottom: .5em;
